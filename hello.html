@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/javascript">
+    console.log('Hello Javascript - 1');
+    // 브라우저의 파싱이 완료되고 페이지 로딩이 끝나면 호출
+    window.onload = function(){
+      // TODO: DOM 단원에서 자세히 확인
+      var btn = document.querySelector('button');
+      btn.onclick = function(event){
+        if(!event){
+          event = window.event;
+        }
+        // event = event || window.event;
+        console.log('버튼 클릭.', event.clientX);
+      };
+    };
+  </script>
+  <script src="hello.js"></script>
+</head>
+<body>
+  <h1>Hello JavaScript - 3</h1>
+  <button>클릭</button>
+  <script type="text/javascript">
+    console.log('Hello Javascript - 4');
+    
+  </script>
+</body>
+</html>
