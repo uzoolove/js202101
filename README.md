@@ -60,7 +60,7 @@
 4. 브라우저의 주소창의 URL 복사 후 채팅창에 붙여넣기
 
 ## 실습 결과 확인
-* [실습 페이지로 이동](https://uzoolove.github.io/js202010/)
+* [실습 페이지로 이동](https://uzoolove.github.io/js202101/)
 
 
 
