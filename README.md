@@ -18,7 +18,7 @@
 
 ### 소스코드 다운로드
 * day1.zip
-* [Download Pages](https://github.com/uzoolove/js202010/blob/main/sample/day1.zip)(마우스 오른쪽 버튼 > 새 탭에서 링크 열기) 이동 후 Download 버튼 클릭
+* [Download Pages](https://github.com/uzoolove/js202101/blob/main/sample/day1.zip)(마우스 오른쪽 버튼 > 새 탭에서 링크 열기) 이동 후 Download 버튼 클릭
 * 다운로드 받은 파일을 C 드라이브 root에 압축 해제
   * C:\jslab\ch03
   * C:\jslab\css
@@ -46,12 +46,12 @@
 ```
 > node webserver.js
 ```
-5. 크롬 브라우저 주소창에 http://localhost:8000 입력
+5. 크롬 브라우저 주소창에 http://localhost 입력
 6. F12 눌러서 크롬 브라우저의 개발자 도구 표시
 7. 각 예제 실행 결과를 개발자 도구의 Console 탭에서 확인
 
 ## PPT 다운로드
-* [Download Pages](https://github.com/uzoolove/js202010/blob/main/PPT)(마우스 오른쪽 버튼 > 새 탭에서 링크 열기) 이동 후 각 PPT 파일 선택해서 Download 버튼 클릭
+* [Download Pages](https://github.com/uzoolove/js202101/blob/main/PPT)(마우스 오른쪽 버튼 > 새 탭에서 링크 열기) 이동 후 각 PPT 파일 선택해서 Download 버튼 클릭
 
 ## 소스코드 공유(본인의 소스코드를 강사에게 공유하고 싶을때)
 1. [Code Share](https://codeshare.io/) 접속(마우스 오른쪽 버튼 > 새 탭에서 링크 열기)
@@ -60,7 +60,7 @@
 4. 브라우저의 주소창의 URL 복사 후 채팅창에 붙여넣기
 
 ## 실습 결과 확인
-* [실습 페이지로 이동](https://uzoolove.github.io/js202010)
+* [실습 페이지로 이동](https://uzoolove.github.io/js202101)
 
 
 
