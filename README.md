@@ -62,5 +62,12 @@
 ## 실습 결과 확인
 * [실습 페이지로 이동](https://uzoolove.github.io/js202101/)(마우스 오른쪽 버튼 > 새 탭에서 링크 열기)
 
-
+# 2일차
+## 소스코드 다운로드
+* day2.zip
+* [Download Pages](https://github.com/uzoolove/js202010/blob/main/sample/day2.zip)(마우스 오른쪽 버튼 > 새 탭에서 링크 열기) 이동 후 Download 버튼 클릭
+* 다운로드 받은 파일을 C 드라이브 jslab 폴더에 압축 해제(기존 파일 덮어쓰기)
+  * C:\jslab\ch04
+  * C:\jslab\etc
+  * C:\jslab\index.html
 
