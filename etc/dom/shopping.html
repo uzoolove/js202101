@@ -7,7 +7,28 @@
 <!-- <script src="../../js/mylib.js"></script> -->
 <!-- <script src="../../js/prototype.js"></script> -->
 <script>
-	
+  // window.onload = function(){};
+  window.addEventListener('DOMContentLoaded', function(){
+    var btn1 = document.querySelector('button');
+    var btn2 = btn1.nextElementSibling;
+    var btn3 = btn2.nextElementSibling;
+
+    btn1.onclick = function(){
+      var movies = document.querySelector('#movies');
+      var firstLi = movies.firstElementChild;
+      var secondLi = firstLi.nextElementSibling;
+      var title = secondLi.firstChild.nodeValue;
+      console.log(title);
+    };
+    // DOM Level 0 방식(비표준)
+    btn2.onclick = function(){
+
+    };
+    // DOM Level 2 방식(표준, IE9 부터 지원됨. IE8까지는 attachEvent('onclick', function(){}))
+    btn3.addEventListener('click', function(){
+
+    });
+  });
 </script>
 </head>
 <body>
