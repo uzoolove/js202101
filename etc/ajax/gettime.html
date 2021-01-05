@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript Lab</title>
+<link rel="shortcut icon" href="../../img/favicon.ico">
+<script src="../../js/mylib.js"></script>
+<script src="../../js/prototype.js"></script>
+<script src="../../js/partial.js"></script>
+<script>
+	window.onload = function(){
+		document.querySelector('button').onclick = function(){
+      getTimeXHR();
+      getTimeJson();
+      getTime();
+    };
+	};
+
+	// 1. XMLHttpRequest를 이용한 Ajax 요청(/time)
+	function getTimeXHR(){
+		// 1. XMLHttpRequest 생성		
+		
+		// 2. 요청준비(open())
+		
+		// 3. 요청(send())
+		
+		// 4. 응답 데이터 처리
+		
+	};
+
+	// 2. XMLHttpRequest를 이용한 Ajax 요청(/timejson)
+	function getTimeJson(){}
+
+	// 3. mylib.js의 ajax(url, method, async, data, dataType, success) 함수를 이용한 Ajax 요청
+	function getTime(){}
+
+	// 4. mylib.js의 ajax(url, options) 함수를 이용한 Ajax 요청
+	// function getTime(){}
+
+	// 5. mylib.js의 get(url, data, success) 함수를 이용한 Ajax 요청
+	// function getTime(){}
+
+	// 6. curry() 함수를 이용한 Ajax 요청
+	// function getTime(){}
+
+	// 7. partial() 함수를 이용한 Ajax 요청
+	// function getTime(){}
+	
+	function append(str){
+		document.querySelector('#result').innerHTML += str + '<br>';
+	}
+	
+	function appendJson(obj){
+		document.querySelector('#result').innerHTML += obj.msg + ' ' + obj.time + '<br>';
+	}
+</script>
+</head>
+<body>
+	<h1>Ajax 통신(XMLHttpRequest 사용)</h1>
+	<input type="text">
+	<button>서버시간요청</button>
+	<div id="result"></div>
+</body>
+</html>

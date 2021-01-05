@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript Lab</title>
+<link rel="shortcut icon" href="../../img/favicon.ico">
+<script src="../../js/mylib.js"></script>
+<script src="../../js/jquery-1.12.4.js"></script>
+<script>
+	
+	
+	function append(str){
+		document.querySelector('#result').innerHTML += str + '<br>';
+	}
+	
+	function appendJson(obj){
+		document.querySelector('#result').innerHTML += obj.msg + ' ' + obj.time + '<br>';
+	}
+</script>
+</head>
+<body>
+	<h1>Ajax 통신(jQuery 사용)</h1>
+	<input type="text">
+	<button>서버시간요청</button>
+	<div id="result"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

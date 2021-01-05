@@ -1,5 +1,15 @@
 var Score = function(kor, eng, math){
-	
+  this.kor = kor;
+  this.eng = eng;
+  this.math = math;
+  this.sum = function(){
+    // TODO: closure 단원. 실행이 완료된 함수의 지역변수가 참조 가능한 상태로 유지되는 현상
+    // return kor + eng + math;
+    return this.kor + this.eng + this.math;
+  };
+  this.avg = function(){
+    return this.sum() / 3;
+  };
 };
 
 // kim은 점수가 각각 100, 90, 80이다.

@@ -8,7 +8,30 @@
 	
 </style>
 <script>
-	
+	window.onload = function(){
+    console.log('1. load 이벤트 발생.');
+    var btn = document.getElementById('click');
+    var btn = document.getElementsByTagName('button')[0];
+    var btn = document.getElementsByClassName('mybtn')[0];
+    var btn = document.getElementsByTagName('body')[0].lastElementChild;
+    var btn = document.getElementsByTagName('body')[0].firstElementChild.nextElementSibling.nextElementSibling;
+
+    var btn = document.querySelector('#click');
+    var btn = document.querySelector('button');
+    var btn = document.querySelector('.mybtn');
+    var btn = document.querySelector('body > button'); // 자식
+    var btn = document.querySelector('body button'); // 자손
+
+    btn.onclick = function(){
+      console.log('3. click 이벤트 발생.');
+      var msg = '5. 버튼 누른 후 3초 지남.';
+      setTimeout(function(){
+        console.log(msg);
+      }, 1000*3);
+      console.log('4. click 이벤트 처리 완료.');
+    };
+    console.log('2. load 이벤트 처리 완료.');
+  };
 </script>
 </head>
 <body>
