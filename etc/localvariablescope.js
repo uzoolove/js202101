@@ -1,12 +1,12 @@
 // 지정한 두 값의 최대값을 반환한다.
 function max(n1, n2){
-  // var maxNum;
+  var maxNum;
   // let maxNum;
   
   if(n1 > n2){
-    var maxNum = n1;
+    maxNum = n1;
   }else{
-    var maxNum = n2;
+    maxNum = n2;
   }
 	
 	return maxNum;
