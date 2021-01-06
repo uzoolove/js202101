@@ -6,7 +6,28 @@
 <link rel="shortcut icon" href="../../img/favicon.ico">
 <script src="../../js/prototype.js"></script>
 <script>
-	
+  // window.$ = window.document.getElementById;
+  // window.$$ = window.document.getElementsByTagName;
+  window.onload = function(){
+    $$('button')[0].on('click', function(){
+      // new Ajax.Request('/time', {
+      //   method: 'get',  // 기본 post
+      //   asynchronous: false,  // 기본 true
+      //   parameters: 'msg=Request',
+      //   onSuccess: function(xhr){
+      //     var result = xhr.responseText;
+      //     $('result').innerHTML = result;
+      //   }
+      // });
+      // new Ajax.Updater('result', '/time', {
+      //   parameters: 'msg=Updater',
+      // });
+      new Ajax.PeriodicalUpdater('result', '/time', {
+        parameters: 'msg=PU',
+        frequency: 10
+      });
+    });
+  };
 </script>
 </head>
 <body>

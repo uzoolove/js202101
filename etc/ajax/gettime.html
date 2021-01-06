@@ -49,10 +49,10 @@
 
 	// 3. mylib.js의 ajax(url, method, async, data, dataType, success) 함수를 이용한 Ajax 요청
 	function getTime(){
-    ajax('/time', 'GET', true, 'msg=ajax-1', 'text', append);
-    ajax('/timejson', 'POST', false, 'msg=ajax-2', 'JSON', appendJson);
-    ajax('/time?msg=ajax-3');
-    ajax('/time?msg=ajax-4', '', undefined, 0, null, append);
+    MyLib.ajax('/time', 'GET', true, 'msg=ajax-1', 'text', append);
+    MyLib.ajax('/timejson', 'POST', false, 'msg=ajax-2', 'JSON', appendJson);
+    MyLib.ajax('/time?msg=ajax-3');
+    MyLib.ajax('/time?msg=ajax-4', '', undefined, 0, null, append);
   }
 
   // 4. mylib.js의 ajax(url, options) 함수를 이용한 Ajax 요청
@@ -63,22 +63,22 @@
    *  3. 인자값의 의미를 파악하기 좋음(가독성)
    */
 	function getTime(){
-    ajax('/time', {
+    MyLib.ajax('/time', {
       // method: 'GET',
       // async: true,
       data: 'msg=ajax-1',
       // dataType: 'text',
       success: append
     });
-    ajax('/timejson', {
+    MyLib.ajax('/timejson', {
       data: 'msg=ajax-2',
       async: false,
       dataType: 'JSON',
       method: 'POST',
       success: appendJson
     });
-    ajax('/time?msg=ajax-3');
-    ajax('/time?msg=ajax-4', {
+    MyLib.ajax('/time?msg=ajax-3');
+    MyLib.ajax('/time?msg=ajax-4', {
       success: append
     });
   }
