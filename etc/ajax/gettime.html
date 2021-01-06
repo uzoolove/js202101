@@ -52,6 +52,7 @@
     ajax('/time', 'GET', true, 'msg=ajax-1', 'text', append);
     ajax('/timejson', 'POST', false, 'msg=ajax-2', 'JSON', appendJson);
     ajax('/time?msg=ajax-3');
+    ajax('/time?msg=ajax-4', '', undefined, 0, null, append);
   }
 
 	// 4. mylib.js의 ajax(url, options) 함수를 이용한 Ajax 요청
