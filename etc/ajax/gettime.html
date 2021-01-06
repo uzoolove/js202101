@@ -32,7 +32,20 @@
 	};
 
 	// 2. XMLHttpRequest를 이용한 Ajax 요청(/timejson)
-	function getTimeJson(){}
+	function getTimeJson(){
+    // 1. XMLHttpRequest 생성		
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function(){
+      // 4. 응답 데이터 처리
+      var result = xhr.responseText;
+      result = JSON.parse(result);
+      appendJson(result);
+    }
+		// 2. 요청준비(open())
+		xhr.open('post', '/timejson', false);
+    // 3. 요청(send())
+    xhr.send('msg=timejson');
+  }
 
 	// 3. mylib.js의 ajax(url, method, async, data, dataType, success) 함수를 이용한 Ajax 요청
 	function getTime(){}
