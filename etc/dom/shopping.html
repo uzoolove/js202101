@@ -16,17 +16,29 @@
     btn1.onclick = function(){
       var movies = document.querySelector('#movies');
       var firstLi = movies.firstElementChild;
-      var secondLi = firstLi.nextElementSibling;
-      var title = secondLi.firstChild.nodeValue;
-      console.log(title);
+      if(firstLi && firstLi.nextElementSibling){
+        var secondLi = firstLi.nextElementSibling;
+        var title = secondLi.firstChild.nodeValue;
+        console.log(title);
+      }
     };
     // DOM Level 0 방식(비표준)
     btn2.onclick = function(){
-
+      var newLi = document.createElement('li');
+      var newTxt = document.createTextNode('우유');
+      newLi.appendChild(newTxt);
+      var purchases = document.querySelector('#purchases');
+      purchases.appendChild(newLi);
     };
     // DOM Level 2 방식(표준, IE9 부터 지원됨. IE8까지는 attachEvent('onclick', function(){}))
     btn3.addEventListener('click', function(){
-
+      var list = document.querySelectorAll('.list');
+      for(var i=0; i<list.length; i++){
+        var firstLi = list[i].firstElementChild;
+        if(firstLi){
+          firstLi.parentNode.removeChild(firstLi);
+        }
+      }
     });
   });
 </script>
