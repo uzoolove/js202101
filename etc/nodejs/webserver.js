@@ -27,7 +27,9 @@ function responseTime(req, res){
     var now = Date();
     res.writeHead(200, {'Content-Type': 'text/plain;charset=utf-8'});
     // 추출한 query string과 함께 현재 시간을 문자열로 응답
-    res.end(query.msg + ' ' + now); 
+    // setTimeout(function(){
+      res.end(query.msg + ' ' + now);
+    // }, 1000*10);
   });
 }
 

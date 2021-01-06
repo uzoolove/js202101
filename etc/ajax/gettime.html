@@ -19,13 +19,16 @@
 	// 1. XMLHttpRequest를 이용한 Ajax 요청(/time)
 	function getTimeXHR(){
 		// 1. XMLHttpRequest 생성		
-		
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function(){
+      // 4. 응답 데이터 처리
+      var result = xhr.responseText;
+      append(result);
+    }
 		// 2. 요청준비(open())
-		
-		// 3. 요청(send())
-		
-		// 4. 응답 데이터 처리
-		
+		xhr.open('get', '/time?msg=time', true);
+    // 3. 요청(send())
+    xhr.send();
 	};
 
 	// 2. XMLHttpRequest를 이용한 Ajax 요청(/timejson)
