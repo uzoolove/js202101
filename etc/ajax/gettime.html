@@ -55,13 +55,30 @@
     ajax('/time?msg=ajax-4', '', undefined, 0, null, append);
   }
 
-	// 4. mylib.js의 ajax(url, options) 함수를 이용한 Ajax 요청
+  // 4. mylib.js의 ajax(url, options) 함수를 이용한 Ajax 요청
+  /**
+   * 매개변수를 Object로 지정할 경우의 장점
+   *  1. 빈자리를 채울 필요 없음
+   *  2. 순서를 지킬 필요 없음
+   *  3. 인자값의 의미를 파악하기 좋음(가독성)
+   */
 	function getTime(){
     ajax('/time', {
-      method: 'GET',
-      async: true,
+      // method: 'GET',
+      // async: true,
       data: 'msg=ajax-1',
-      dataType: 'text',
+      // dataType: 'text',
+      success: append
+    });
+    ajax('/timejson', {
+      data: 'msg=ajax-2',
+      async: false,
+      dataType: 'JSON',
+      method: 'POST',
+      success: appendJson
+    });
+    ajax('/time?msg=ajax-3');
+    ajax('/time?msg=ajax-4', {
       success: append
     });
   }
