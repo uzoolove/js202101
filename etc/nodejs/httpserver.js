@@ -1,6 +1,6 @@
-const net = require('net');
+const http = require('http');
 
-net.createServer(function(socket){
+http.createServer(function(socket){
   console.log(socket.remoteAddress, '접속');
   socket.on('data', function(data){
     console.log('from client:', data.toString());
