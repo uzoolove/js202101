@@ -6,7 +6,16 @@
 <link rel="shortcut icon" href="../../img/favicon.ico">
 <script src="../../js/jquery-1.12.4.js"></script>
 <script>
-	
+  // DOMContentLoaded 이벤트 등록
+  $(function(){
+    $('button:first').on('click', function(){
+      console.log($('#movies > li:nth-child(2)').text());
+    }).next().on('click', function(){
+      $('<li>우유</li>').appendTo('#purchases');
+    }).next().on('click', function(){
+      $('.list > li:first-child').remove();
+    });
+  });
 </script>
 </head>
 <body>
