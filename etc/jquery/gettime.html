@@ -10,6 +10,7 @@
   
   $(function(){
     $('button').on('click', function(){
+
       $.ajax('/time', {
         success: append,
         data: 'msg=1. ajax-1'
@@ -35,8 +36,39 @@
 
       $.post('/time', 'msg=7. post-1', append);
 
-      // $('#result').load('/time?msg=load');
-
+      // $.ajax('/time', {
+      //   success: function(result){
+      //     append(result);
+      //     $.ajax('/timejson', {
+      //       method: 'post', // 기본 get
+      //       async: false,   // 기본 true
+      //       success: function(result){
+      //         appendJson(result);
+      //         $.ajax('/time?msg=3. ajax-4', {
+      //           success: function(result){
+      //             append(result);
+      //             $.get('/time', 'msg=4. get-1', function(result){
+      //               append(result);
+      //               $.get('/time?msg=5. get-3', function(result){
+      //                 append(result);
+      //                 $.getJSON('/timejson', 'msg=6. getjson', function(result){
+      //                   appendJson(result);
+      //                   $.post('/time', 'msg=7. post-1', append);
+      //                 });
+      //               });
+      //             });
+      //           }
+      //         });
+      //       },
+      //       dataType: 'json', // 생략시 알아서 판단
+      //       data: 'msg=2. ajax-2'
+      //     });
+      //   },
+      //   data: 'msg=1. ajax-1'
+      // });
+    
+    
+    
     });
   });
 	
