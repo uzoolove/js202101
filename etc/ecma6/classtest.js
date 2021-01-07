@@ -13,7 +13,7 @@ class HighSchool{
   };
 }
 
-var s1 = new HighSchool(100, 91);
+var s1 = new HighSchool('100', 91);
 console.log(s1.sum());
 console.log(s1.avg());
 
