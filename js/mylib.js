@@ -1,5 +1,11 @@
 var MyLib = {};
 
+// 배열의 최소값을 반환한다.
+// [10,30,20].min();
+Array.prototype.min = function(){
+  return Math.min.apply(Math, this);
+};
+
 // firstLi.remove();
 // -> firstLi.parentNode.removeChild(firstLi);
 if(!HTMLElement.prototype.remove){
