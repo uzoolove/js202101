@@ -5,7 +5,7 @@ var url = require('url');
 
 var home = path.join(__dirname, '..', '..');
 var file = new nodeStatic.Server(home);
-http.createServer(function (req, res) {	
+http.createServer((req, res) => {	
   var parseUrl = url.parse(req.url);
   switch(parseUrl.pathname){
     case '/time':
@@ -17,13 +17,13 @@ http.createServer(function (req, res) {
     default:
       file.serve(req, res);
   }
-}).listen(80, function(){
+}).listen(80, () => {
 	console.log('http://localhost');
 });
 
 // 서버의 현재 시간을 응답
 function responseTime(req, res){
-	getQuery(req, function(err, query){
+	getQuery(req, (err, query) => {
     var now = Date();
     res.writeHead(200, {'Content-Type': 'text/plain;charset=utf-8'});
     // 추출한 query string과 함께 현재 시간을 문자열로 응답
@@ -35,7 +35,7 @@ function responseTime(req, res){
 
 // 서버의 현재 시간을 응답(JSON)
 function responseTimeJson(req, res){
-	getQuery(req, function(err, query){
+	getQuery(req, (err, query) => {
     var now = Date();
     res.writeHead(200, {'Content-Type': 'application/json;charset=utf-8'});
     // 추출한 query string과 함께 현재 시간을 JSON 형태의 문자열로 응답
