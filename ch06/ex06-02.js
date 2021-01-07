@@ -1,7 +1,13 @@
 // prototype 이용해서 작성
 var Person = function(name){
   // etc/prototypetest.js 파일 참조
-  
+  this.name = name;
+};
+Person.prototype.getName = function(){
+  return this.name;
+};
+Person.prototype.setName = function(name){
+  this.name = name;
 };
 
 var kim = new Person('김철수');
