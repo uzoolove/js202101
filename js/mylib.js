@@ -1,5 +1,15 @@
 var MyLib = {};
 
+// Child가 Parent를 상속 받는다.
+MyLib.inherite = function(Parent, Child){
+  // var F = function(){};
+  // F.prototype = Parent.prototype;
+  // Child.prototype = new F();
+  
+  Child.prototype = Object.create(Parent.prototype);
+  Child.prototype.constructor = Child;
+};
+
 // 배열의 최소값을 반환한다.
 // [10,30,20].min();
 Array.prototype.min = function(){
