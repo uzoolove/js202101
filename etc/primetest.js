@@ -1,6 +1,22 @@
 // 지정한 수가 소수인지 여부를 반환
 var isPrime = function(num){
-	
+  // 캐시를 위한 코드
+  isPrime._cache = isPrime._cache || {};
+  if(isPrime._cache[num] != undefined){
+    return isPrime._cache[num];
+  }else{
+    // 소수 판별 코드
+    var prime = true;
+    for(var i=2; i<num/2; i++){
+      if(num%i == 0){
+        prime = false;
+        break;
+      }
+    }
+    // 캐시를 위한 코드
+    isPrime._cache[num] = prime;
+    return prime;
+  }
 };
 
 console.time('소요시간');
