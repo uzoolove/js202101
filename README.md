@@ -98,3 +98,5 @@
 * http://es6-features.org/
 ## ES6 호환성 테이블
 * http://kangax.github.io/compat-table/es6/
+## 브라우저 점유율
+* https://gs.statcounter.com

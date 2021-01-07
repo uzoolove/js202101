@@ -12,7 +12,9 @@ add();
 function add100(n1){
   var n2 = 100;
   var result = n1 + n2;
-  console.log(n1 + ' + ' + n2 + ' = ' + result);
+  // console.log(n1 + ' + ' + n2 + ' = ' + result);
+  // ES6 Template Literal
+  console.log(`${n1} + ${n2} = ${result}`);
 }
 add100(20);
 add100(30);
