@@ -84,7 +84,13 @@
   }
 
 	// 5. mylib.js의 get(url, data, success) 함수를 이용한 Ajax 요청
-	// function getTime(){}
+	function getTime(){
+    MyLib.get('/time', 'msg=get-1', append);
+    MyLib.get('/time', 'msg=get-2');
+    MyLib.get('/time?msg=get-3', append);
+    MyLib.get('/time?msg=get-4');
+    MyLib.getJSON('/timejson', 'msg=getjson', appendJson);
+  }
 
 	// 6. curry() 함수를 이용한 Ajax 요청
 	// function getTime(){}
