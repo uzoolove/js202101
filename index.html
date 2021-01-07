@@ -19,33 +19,36 @@
         }else{
           jQuery(this).children('button').text('예제목록 펼치기');
         }
-		  });
-    });
-
-		jQuery(function() {
-      jQuery('.paragraph > ul a').click(function(e) {
-        jQuery('.paragraph > ul a').removeClass('clicked');
-        jQuery(this).addClass('clicked');
-        var url = jQuery(this).attr('href');
-        var extName = url.split('.')[1];
-        if (extName == 'js') {
-          e.preventDefault();
-          console.clear();
-          var title = jQuery(this).text();
-          console.log('<<< ' + title + ' 예제 실행 결과(' + url + ') >>>');
-          jQuery.get(url, function(data) {
-            if (data.trim) {
-              data = data.trim();
-            }
-            console.log(data);
-            console.log('\n\n');
-            jQuery('body').next().remove();
-            var result = '<script>' + data + '<\/script>';
-            jQuery('html').append(result);
-          }, 'text');
-        }
       });
     });
+    
+    (function($){
+      $(function() {
+        $('.paragraph > ul a').click(function(e) {
+          $('.paragraph > ul a').removeClass('clicked');
+          $(this).addClass('clicked');
+          var url = $(this).attr('href');
+          var extName = url.split('.')[1];
+          if (extName == 'js') {
+            e.preventDefault();
+            console.clear();
+            var title = $(this).text();
+            console.log('<<< ' + title + ' 예제 실행 결과(' + url + ') >>>');
+            $.get(url, function(data) {
+              if (data.trim) {
+                data = data.trim();
+              }
+              console.log(data);
+              console.log('\n\n');
+              $('body').next().remove();
+              var result = '<script>' + data + '<\/script>';
+                $('html').append(result);
+            }, 'text');
+          }
+        });
+      });
+    })(jQuery);
+
   </script>
 </head>
 <body>
@@ -203,6 +206,89 @@
         </section>
       </section>
       <section class="chapter">
+				<div class="chapter-title">
+					<h3 tabindex="0">5장 실행 컨텍스트와 클로저</h3>
+					<button>예제목록 펼치기</button>
+				</div>
+        <section class="paragraph">
+          <h4 class="paragraph-title">5.1 실행 컨텍스트 개념</h4>
+          <ul>
+            <li><a href="ch05/ex05-01.js">5-1 전역 컨텍스트와 함수 컨텍스트</a></li>
+          </ul>
+        </section>
+        <section class="paragraph">
+          <h4 class="paragraph-title">5.2 실행 컨텍스트 생성 과정</h4>
+          <ul>
+            <li><a href="ch05/ex05-02.js">5-2 실행 컨텍스트 생성 과정</a></li>
+          </ul>
+        </section>
+        <section class="paragraph">
+          <h4 class="paragraph-title">5.3 스코프 체인</h4>
+          <ul>
+            <li><a href="ch05/ex05-03.js">5-3 전역 실행 컨텍스트의 스코프 체인</a></li>
+            <li><a href="ch05/ex05-04.js">5-4 함수를 호출한 경우 생성되는 실행 컨텍스트의 스코프 체인</a></li>
+            <li><a href="ch05/ex05-05.js">5-5 내부 함수를 호출한 경우의 스코프 체인</a></li>
+            <li><a href="ch05/ex05-06.js">5-6 인자로 전달한 함수를 실행할 때의 스코프 체인</a></li>
+          </ul>
+        </section>
+        <section class="paragraph">
+          <h4 class="paragraph-title">5.4 클로저</h4>
+          <ul>
+            <li><a href="ch05/ex05-07.js">5-7 클로저를 사용하는 예제</a></li>
+            <li><a href="ch05/ex05-08.js">5-8 클로저를 사용하는 예제2</a></li>
+            <li><a href="ch05/ex05-09.js">5-9 특정 함수에 사용자가 정의한 객체의 메서드 연결하기(단일 인자)</a></li>
+            <li><a href="ch05/ex05-10.js">5-10 특정 함수에 사용자가 정의한 객체의 메서드 연결하기(추가 인자)</a></li>
+            <li><a href="ch05/ex05-11.js">5-11 전역 변수를 어지럽히는 예제</a></li>
+            <li><a href="ch05/ex05-12.js">5-12 즉시 실행 함수 예제</a></li>
+            <li><a href="ch05/ex05-13.js">5-13 setTimeout()에 지정되는 함수의 사용자 정의</a></li>
+            <li><a href="ch05/ex05-14.js">5-14 클로저의 프로퍼티값은 쓰기 가능함</a></li>
+            <li><a href="ch05/ex05-15.js">5-15 하나의 클로저가 여러 함수 객체의 스코프 체인에 들어가는 예제</a></li>
+            <li><a href="ch05/ex05-16.js">5-16 루프 안에서 클로저를 활용할 때의 클로저 활용</a></li>
+          </ul>
+        </section>
+      </section>
+      <section class="chapter">
+				<div class="chapter-title">
+					<h3 tabindex="0">6장 객체지향 프로그래밍</h3>
+					<button>예제목록 펼치기</button>
+				</div>
+        <section class="paragraph">
+          <h4 class="paragraph-title">6.1 클래스, 생성자, 메서드</h4>
+          <ul>
+            <li><a href="ch06/ex06-01.js">6-1 함수를 중복으로 정의</a></li>
+            <li><a href="ch06/ex06-02.js">6-2 prototype으로 함수의 중복을 제거</a></li>
+            <li><a href="ch06/ex06-03.js">6-3 메서드를 정의하는 함수 사용</a></li>
+          </ul>
+        </section>
+        <section class="paragraph">
+          <h4 class="paragraph-title">6.2 상속</h4>
+          <ul>
+            <li><a href="ch06/ex06-04.js">6-4 상속 기능의 함수</a></li>
+            <li><a href="ch06/ex06-05.js">6-5 상속 함수 사용</a></li>
+            <li><a href="ch06/ex06-06.js">6-6 extend() 함수를 사용한 기능 확장</a></li>
+            <li><a href="ch06/ex06-07.js">6-7 클래스 기반 상속</a></li>
+            <li><a href="ch06/ex06-08.js">6-8 중계 클래스를 이용한 상속</a></li>
+          </ul>
+        </section>
+        <section class="paragraph">
+          <h4 class="paragraph-title">6.3 캡슐화</h4>
+          <ul>
+            <li><a href="ch06/ex06-09.js">6-9 클로저를 활용한 private 변수</a></li>
+            <li><a href="ch06/ex06-10.js">6-10 메서드 목록의 객체를 반환하는 클래스</a></li>
+            <li><a href="ch06/ex06-11.js">6-11 얕은 복사의 문제점</a></li>
+            <li><a href="ch06/ex06-12.js">6-12 함수를 반환하는 클래스</a></li>
+          </ul>
+        </section>
+        <section class="paragraph">
+          <h4 class="paragraph-title">6.4 객체지향 프로그래밍 응용 예제</h4>
+          <ul>
+            <li><a href="ch06/ex06-13.js">6-13 클래스의 기능을 가진 subClass 함수</a></li>
+            <li><a href="ch06/ex06-14.js">6-14 subClass 활용</a></li>
+            <li><a href="ch06/ex06-15.js">6-15 subClass 함수와 모듈 패턴을 이용한 객체지향 프로그래밍</a></li>
+          </ul>
+        </section>
+      </section>
+      <section class="chapter">
         <div class="chapter-title">
           <h3 tabindex="0">기타 예제</h3>
           <button>예제목록 펼치기</button>
@@ -227,6 +313,12 @@
           <ul>
             <li><a href="etc/smallest.js">가변 인자 처리(apply() 활용)</a></li>
             <li><a href="etc/primetest.js">소수 판별(메모이제이션)</a></li>
+            <li><a href="etc/prototypetest.js">prototype 속성</a></li>
+            <li><a href="etc/currytest.js">부분 적용 함수</a></li>
+            <li><a href="etc/overridetest.js">오버라이딩(메모이제이션)</a></li>
+            <li><a href="etc/overridetest2.js">오버라이딩(메모이제이션, 클로저)</a></li>
+            <li><a href="etc/iifepattern.js">즉시실행 함수</a></li>
+            <li><a href="etc/forlooptest.html">즉시실행 함수가 필요한 예제(클로저)</a></li>
           </ul>
         </section>
         <section class="paragraph">
@@ -252,6 +344,14 @@
           <h4 class="paragraph-title">Prototype.js</h4>
           <ul>
             <li><a href="etc/prototype/gettime.html">서버 시간 출력</a></li>
+          </ul>
+        </section>
+        <section class="paragraph">
+          <h4 class="paragraph-title">ECMA Script6</h4>
+          <ul>
+            <li><a href="etc/ecma6/classtest.js">클래스 정의와 상속</a></li>
+            <li><a href="etc/ecma6/arrowfunction.js">Arrow Function</a></li>
+            <li><a href="etc/ecma6/promisetest.js">Promise</a></li>
           </ul>
         </section>
       </section>

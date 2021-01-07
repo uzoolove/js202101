@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript Lab</title>
+<link rel="shortcut icon" href="../img/favicon.ico">
+<script src="../js/mylib.js"></script>
+<script src="../js/prototype.js"></script>
+<script src="../js/jquery-1.12.4.js"></script>
+
+<script>
+	jQuery.noConflict();
+	window.onload = function(){
+		// 문서내의 모든 버튼을 클릭했을때 
+		// 각각 "btn-0 클릭", "btn-1 클릭", "btn-2 클릭" 
+		// ... "btn-n 클릭"을 콘솔에 출력하시오.
+    var btns = document.querySelectorAll('button');
+    // IIFE pattern
+		for(var i=0; i<btns.length; i++){
+			btns[i].addEventListener('click', function(){
+				console.log('btn-' + i + ' 클릭');
+			});
+		}
+	};
+</script>
+</head>
+<body>
+	<h1>즉시 실행 함수</h1>
+  <button>버튼</button>
+  <button>버튼</button>
+  <button>버튼</button>
+</body>
+</html>
