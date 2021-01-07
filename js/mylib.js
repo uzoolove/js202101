@@ -1,5 +1,13 @@
 var MyLib = {};
 
+// firstLi.remove();
+// -> firstLi.parentNode.removeChild(firstLi);
+if(!HTMLElement.prototype.remove){
+  HTMLElement.prototype.remove = function(){
+    this.parentNode.removeChild(this);
+  };
+}
+
 // ajax 요청으로 get 방식의 json 데이터를 받아온다.
 MyLib.getJSON = function(url, data, success){
   MyLib.get(url, data, success, 'json');
@@ -7,7 +15,7 @@ MyLib.getJSON = function(url, data, success){
 
 // ajax 요청으로 get 방식의 text 데이터를 받아온다.
 MyLib.get = function(url, data, success, dataType){
-  var options = { dataType };
+  var options = { dataType: dataType };
   if(typeof data == 'string'){
     options.data = data;
     options.success = success;
