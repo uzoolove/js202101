@@ -10,9 +10,9 @@
 <script>
 	window.onload = function(){
 		document.querySelector('button').onclick = function(){
-      // getTimeXHR();
+      getTimeXHR();
       // getTimeJson();
-      getTime();
+      // getTime();
     };
 	};
 
@@ -22,7 +22,7 @@
     var xhr = new XMLHttpRequest();
     xhr.onload = function(){
       // 4. 응답 데이터 처리
-      var result = xhr.responseText;
+      var result = this.responseText;
       append(result);
     }
 		// 2. 요청준비(open())
