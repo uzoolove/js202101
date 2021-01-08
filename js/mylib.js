@@ -1,5 +1,19 @@
 var MyLib = {};
 
+// 부분 적용 함수
+// var minUnder100 = Math.min.mycurry(100, 200);
+// minUnder100(1000, 500, 300, 400);
+// -> Math.min(100, 1000, 500, 300, 400); -> 100
+Function.prototype.mycurry = function(){
+  var fn = this;
+  var preArgs = Array.prototype.slice.call(arguments);
+  return function(){
+    var callArgs = Array.prototype.slice.call(arguments);
+    var args = preArgs.concat(callArgs);
+    return fn.apply(this, args);
+  };
+};
+
 // Child가 Parent를 상속 받는다.
 MyLib.inherite = function(Parent, Child){
   // var F = function(){};

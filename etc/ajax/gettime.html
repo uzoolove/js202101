@@ -10,9 +10,9 @@
 <script>
 	window.onload = function(){
 		document.querySelector('button').onclick = function(){
-      getTimeXHR();
+      // getTimeXHR();
       // getTimeJson();
-      // getTime();
+      getTime();
     };
 	};
 
@@ -93,7 +93,25 @@
   }
 
 	// 6. curry() 함수를 이용한 Ajax 요청
-	// function getTime(){}
+	function getTime(){
+    MyLib.get('/time', 'msg=get-1', append);
+    MyLib.get('/time', 'msg=get-2', append);
+
+    // mylib.js mycurry
+    var getTime = MyLib.get.mycurry('/time');
+    getTime('msg=mycurry-1', append);
+    getTime('msg=mycurry-2', append);
+
+    // prototype.js curry
+    var getTime = MyLib.get.curry('/time');
+    getTime('msg=curry-1', append);
+    getTime('msg=curry-2', append);
+
+    // ECMA bind
+    var getTime = MyLib.get.bind(this, '/time');
+    getTime('msg=bind-1', append);
+    getTime('msg=bind-2', append);
+  }
 
 	// 7. partial() 함수를 이용한 Ajax 요청
 	// function getTime(){}
