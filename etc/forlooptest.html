@@ -17,10 +17,54 @@
     var btns = document.querySelectorAll('button');
     // IIFE pattern
 		for(var i=0; i<btns.length; i++){
-			btns[i].addEventListener('click', function(){
-				console.log('btn-' + i + ' 클릭');
-			});
-		}
+      (function(i){
+        btns[i].addEventListener('click', function(){
+          console.log('IIFE btn-' + i + ' 클릭');
+        });
+      })(i);
+    }
+    
+    // prototype.js Array.prototype.each()
+    $A(btns).each(function(elem, i){
+      elem.addEventListener('click', function(){
+        console.log('each() btn-' + i + ' 클릭');
+      });
+    });
+
+    // jQuery.each()
+    jQuery.each(btns, function(i, elem){
+      elem.addEventListener('click', function(){
+        console.log('jQuery.each() btn-' + i + ' 클릭');
+      });
+    });
+
+    // jQuery().each()
+    jQuery('button').each(function(i){
+      this.addEventListener('click', function(){
+        console.log('jQuery().each() btn-' + i + ' 클릭');
+      });
+    });
+
+    // ECMA5 forEach()
+    btns.forEach(function(elem, i){
+      elem.addEventListener('click', function(){
+        console.log('forEach() btn-' + i + ' 클릭');
+      });
+    });
+
+    // ECMA6 let
+    for(let i=0; i<btns.length; i++){
+      btns[i].addEventListener('click', function(){
+        console.log('let btn-' + i + ' 클릭');
+      });
+    }
+
+    // mylib.js each()
+    MyLib.each(btns, function(i, elem){
+      this.addEventListener('click', function(){
+        console.log('MyLib.each() btn-' + i + ' 클릭');
+      });
+    });
 	};
 </script>
 </head>

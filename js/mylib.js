@@ -1,5 +1,12 @@
 var MyLib = {};
 
+// 지정한 배열(유사배열객체)의 엘리먼트 수 만큼 반복해서 전달받은 함수를 호출
+MyLib.each = function(arr, fn){
+  for(var i=0; i<arr.length; i++){
+    fn.call(arr[i], i, arr[i]);
+  }
+};
+
 // 메모이제이션(캐싱) 기능의 함수(래퍼)
 // isPrime(3) -> 캐시 X
 // isPrime = isPrime.memoize();
