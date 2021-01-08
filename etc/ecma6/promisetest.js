@@ -48,6 +48,7 @@ function test1(){
 // test1();
 
 function p1(){
+  // EMCA6 Promise
   return new Promise(function(resolve, reject){
     console.log('f1 작업 시작.');
     setTimeout(function(){
@@ -77,10 +78,17 @@ function test2(){
     console.error(err);
   });
 }
-test2();
+// test2();
 
-function test3(){
-  p1();
-  p2();
+// ECMA 2017 async/await
+async function test3(){
+  try{
+    var p1Result = await p1();
+    var result = await p2(p1Result);
+    console.log('최종 결과물', result);
+  }catch(err){
+    console.error(err);
+  }
 }
-// test3();
+test3();
+console.log('테스트 완료');
