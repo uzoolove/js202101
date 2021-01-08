@@ -9,32 +9,33 @@
 <script>
   
   $(function(){
-    $('button').on('click', function(){
+    $('button').on('click', async function(){
 
-      $.ajax('/time', {
-        success: append,
+      var time = await $.ajax('/time', {
+        // success: append,
         data: 'msg=1. ajax-1'
       });
-      $.ajax('/timejson', {
+      append(time);
+      await $.ajax('/timejson', {
         method: 'post', // 기본 get
         async: false,   // 기본 true
         success: appendJson,
         dataType: 'json', // 생략시 알아서 판단
         data: 'msg=2. ajax-2'
       });
-      $.ajax('/time?msg=ajax-3');
-      $.ajax('/time?msg=3. ajax-4', {
+      await $.ajax('/time?msg=ajax-3');
+      await $.ajax('/time?msg=3. ajax-4', {
         success: append
       });
     
-      $.get('/time', 'msg=4. get-1', append);
-      $.get('/time', 'msg=get-2');
-      $.get('/time?msg=5. get-3', append);
-      $.get('/time?msg=get-4');
+      await $.get('/time', 'msg=4. get-1', append);
+      await $.get('/time', 'msg=get-2');
+      await $.get('/time?msg=5. get-3', append);
+      await $.get('/time?msg=get-4');
 
-      $.getJSON('/timejson', 'msg=6. getjson', appendJson);
+      await $.getJSON('/timejson', 'msg=6. getjson', appendJson);
 
-      $.post('/time', 'msg=7. post-1', append);
+      await $.post('/time', 'msg=7. post-1', append);
 
       // $.ajax('/time', {
       //   success: function(result){
