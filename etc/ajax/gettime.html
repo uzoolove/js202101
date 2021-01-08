@@ -114,7 +114,11 @@
   }
 
 	// 7. partial() 함수를 이용한 Ajax 요청
-	// function getTime(){}
+	function getTime(){
+    var getTime = MyLib.get.partial('/time', undefined, append);
+    getTime('msg=partial-1');
+    getTime('msg=partial-2');
+  }
 	
 	function append(str){
 		document.querySelector('#result').innerHTML += str + '<br>';
