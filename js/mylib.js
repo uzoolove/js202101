@@ -1,5 +1,31 @@
 var MyLib = {};
 
+// 메모이제이션(캐싱) 기능의 함수(래퍼)
+// isPrime(3) -> 캐시 X
+// isPrime = isPrime.memoize();
+// isPrime(3) -> 캐시 O
+//  -> isPrime.memoization(3)
+Function.prototype.memoize = function(){
+  var fn = this;
+  return function(){
+    return fn.memoization.apply(fn, arguments);
+  };
+};
+
+// 메모이제이션(캐싱) 기능의 함수
+// isPrime(3) -> 캐시 X
+// isPrime.memoization(1000000007) -> 캐시 O
+Function.prototype.memoization = function(key){
+  // 캐시를 위한 코드
+  this._cache = this._cache || {};
+  if(this._cache[key] != undefined){
+    return this._cache[key];
+  }else{
+    return this._cache[key] = this(key);
+  }
+};
+
+
 // 부분 적용 함수
 // var minUnder100 = Math.min.mycurry(100, 200);
 // minUnder100(1000, 500, 300, 400);
