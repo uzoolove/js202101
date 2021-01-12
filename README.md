@@ -65,7 +65,7 @@
 # 2일차
 ## 소스코드 다운로드
 * day2.zip
-* [Download Pages](https://github.com/uzoolove/js202010/blob/main/sample/day2.zip)(마우스 오른쪽 버튼 > 새 탭에서 링크 열기) 이동 후 Download 버튼 클릭
+* [Download Pages](https://github.com/uzoolove/js202101/blob/main/sample/day2.zip)(마우스 오른쪽 버튼 > 새 탭에서 링크 열기) 이동 후 Download 버튼 클릭
 * 다운로드 받은 파일을 C 드라이브 jslab 폴더에 압축 해제(기존 파일 덮어쓰기)
   * C:\jslab\ch04
   * C:\jslab\etc
@@ -74,7 +74,7 @@
 # 3일차
 ## 소스코드 다운로드
 * day3.zip
-* [Download Pages](https://github.com/uzoolove/js202010/blob/main/sample/day3.zip)(마우스 오른쪽 버튼 > 새 탭에서 링크 열기) 이동 후 Download 버튼 클릭
+* [Download Pages](https://github.com/uzoolove/js202101/blob/main/sample/day3.zip)(마우스 오른쪽 버튼 > 새 탭에서 링크 열기) 이동 후 Download 버튼 클릭
 * 다운로드 받은 파일을 C 드라이브 jslab 폴더에 압축 해제(기존 파일 덮어쓰기)
   * C:\jslab\etc
   * C:\jslab\index.html
@@ -82,7 +82,7 @@
 # 4일차
 ## 소스코드 다운로드
 * day4.zip
-* [Download Pages](https://github.com/uzoolove/js202010/blob/main/sample/day4.zip)(마우스 오른쪽 버튼 > 새 탭에서 링크 열기) 이동 후 Download 버튼 클릭
+* [Download Pages](https://github.com/uzoolove/js202101/blob/main/sample/day4.zip)(마우스 오른쪽 버튼 > 새 탭에서 링크 열기) 이동 후 Download 버튼 클릭
 * 다운로드 받은 파일을 C 드라이브 jslab 폴더에 압축 해제(기존 파일 덮어쓰기)
   * C:\jslab\ch05
   * C:\jslab\ch06
